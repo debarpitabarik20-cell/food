@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hellluuu papa🥺🎁</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #514332;
+            --bg-start: #fff9f0;
+            --bg-end: #fdf2e1;
+            --text: #41362b;
+            --button-yes: #4a6c38;
+            --button-no: #8c5a4b;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 420px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        #screen-2, #screen-3 { display: none; }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+        }
+
+        .btn-full { width: 100%; background-color: var(--primary); }
+        .btn-yes { background-color: var(--button-yes); flex: 1; }
+        .btn-no { background-color: var(--button-no); flex: 1; }
+
+        ul { 
+            list-style: none; 
+            padding: 0; 
+            font-size: 1.15rem; 
+            line-height: 2.2; 
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        li {
+            background: #f7ede2;
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SCREEN 1 -->
+    <div class="container" id="screen-1">
+        <h1>hellluuu papa🥺 🎁</h1>
+        <p>Ek baat poochhni hai aapse... 😍</p>
+        <button class="btn btn-full" onclick="showScreen2()">Click Here ✨</button>
+    </div>
+
+    <!-- SCREEN 2 -->
+    <div class="container" id="screen-2">
+        <p class="dancing-script">Papa, naye kapde dilado please? paise bhi bhej dena khtm hogya🥺🛍️</p>
+        <div class="btn-container">
+            <button class="btn btn-yes" onclick="showResult('yes')">Haanji! ✅</button>
+            <button class="btn btn-no" onclick="showResult('no')">No ❌</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 3 -->
+    <div class="container" id="screen-3">
+        <p class="dancing-script" id="title-text"></p>
+        <ul id="text-list"></ul>
+    </div>
+
+    <script>
+        function showScreen2() {
+            document.getElementById('screen-1').style.display = 'none';
+            document.getElementById('screen-2').style.display = 'block';
+        }
+
+        function showResult(choice) {
+            document.getElementById('screen-2').style.display = 'none';
+            document.getElementById('screen-3').style.display = 'block';
+
+            var title = document.getElementById('title-text');
+            var list = document.getElementById('text-list');
+
+            if (choice === 'yes') {
+                title.innerText = 'Aww! Best Papa in the World!🥺 ❤️';
+                list.innerHTML = '<li>Main jaanti thi aap mana nahi karenge!🥺 💖</li>' +
+                                 '<li>I love you so muchhhh! 🤗</li>' +
+                                 '<li>Kab chal rahe hain shopping par phir? 💃🛍️</li>';
+            } else {
+                title.innerText = 'Haww! 😲 Aise Kaise No?';
+                list.innerHTML = '<li>"Mere bubbuuu nhi ho aap?" 🥺</li>' +
+                                 '<li>"Please kuchupuchu kapde dilado na..."🥺 🛍️</li>' +
+                                 '<li>"Basss! Dar nahi lagta Ghar ki malkin se?"🥺 😤🔥</li>';
+            }
+        }
+    </script>
+</body>
+</html>
